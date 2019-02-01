@@ -47,7 +47,11 @@
     cursor: pointer;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    &:hover {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+      &:hover {
       background-color: lighten(@lambda-red, 10%);
     }
   }
