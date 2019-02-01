@@ -15,17 +15,23 @@ class Tabs {
   }
 
   switchTab (i) {
-    // deselect the active tab
-    this.links[this.activeTab].deselect();
-    // select the new tab
-    this.links[i].select();
+    // loop through the link and item arrays
+    [this.links, this.items].forEach(elems => {
+      // deselect the active element
+      elems[this.activeTab].deselect();
+      // select the new element
+      elems[i].select();
+    });
+
     // set the active tab
     this.activeTab = i;
   }
 
   init () {
     // map through the tab links and return an array of TabsLinks
-    this.links = [...this.links].map((link, i) => new TabsLink(link, this.items[i], i));
+    this.links = [...this.links].map((link, i) => new TabsLink(link, i));
+    // map through the tab items and return an array of TabsItems
+    this.items = [...this.items].map((item, i) => new TabsItem(item, i));
     // loop over the TabsLinks and set their click events
     this.links.forEach(link => {
       link.element.addEventListener('click', () => this.switchTab(link.index));
@@ -34,34 +40,29 @@ class Tabs {
 }
 
 class TabsLink {
-  constructor (linkElement, itemElement, i) {
+  constructor (linkElement, i) {
     // assign this.element to current tab
     this.element = linkElement;
     // set the tab index
     this.index = i;
-    // assign a new instance of TabsItem
-    this.itemElement = new TabsItem(itemElement);
   }
 
   select () {
     // add selected link class
     this.element.classList.add('tabs-link-selected');
-    // call associated item select method
-    this.itemElement.select();
   }
 
   deselect () {
     // remove selected link class
     this.element.classList.remove('tabs-link-selected');
-    // call associated item deselect method
-    this.itemElement.deselect();
   }
 }
 
 class TabsItem {
-  constructor (itemElement) {
+  constructor (itemElement, i) {
     // assign this.element to current item
     this.element = itemElement;
+    this.index = i;
   }
 
   select () {
