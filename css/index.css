@@ -1,0 +1,200 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.dropdown {
+  z-index: 2;
+  position: absolute;
+  left: 25px;
+  cursor: pointer;
+}
+.dropdown .dropdown-button {
+  padding: 15px;
+  border: 3px solid #363636;
+  color: #e7e6e2;
+  font-size: 20px;
+  font-weight: bold;
+}
+.dropdown .dropdown-button:hover {
+  background-color: #ba2c35;
+}
+.dropdown .dropdown-content {
+  width: 100%;
+  position: absolute;
+  background-color: #1d1e21;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10px;
+  border: 2.5px solid #912229;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+.dropdown .dropdown-link {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+  text-decoration: none;
+  color: #e6858b;
+}
+.dropdown .dropdown-link:hover {
+  color: #e7e6e2;
+  background-color: #912229;
+}
+.dropdown .dropdown-visible {
+  opacity: 1;
+}
+.tabs {
+  width: 100%;
+}
+.tabs .tabs-items {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 60px;
+  position: relative;
+}
+.tabs .tabs-item {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.3s linear;
+  transition: visibility 0s, opacity 0.3s linear;
+  width: 75%;
+}
+.tabs .tabs-item .tabs-item-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+.tabs .tabs-item-selected {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+.tabs .tabs-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #912229;
+}
+.tabs .tabs-link {
+  padding: 20px 25px;
+  font-size: 24px;
+  background-color: #912229;
+  border-right: 1px solid #363636;
+  color: #e7e6e2;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+.tabs .tabs-link:hover {
+  background-color: #ba2c35;
+}
+.tabs .tabs-link-selected {
+  z-index: 2;
+  border-right: 1px solid #912229;
+  background-color: #1d1e21;
+  color: #e7e6e2;
+}
+.tabs .tabs-link-selected:hover {
+  background-color: #e7e6e2;
+  color: #1d1e21;
+}
+.carousel {
+  width: 100%;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.carousel .cycle {
+  color: #e7e6e2;
+  margin: 0 25px;
+  font-size: 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  opacity: 0.7;
+}
+.carousel .cycle:first-of-type {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.carousel .cycle:hover {
+  opacity: 1;
+}
+.carousel .carousel-image {
+  border-radius: 10px;
+}
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 300px;
+  margin: 0;
+  background-color: #1d1e21;
+  color: #e7e6e2;
+}
+.header-container {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #363636;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #912229;
+}
+.header-container .header {
+  height: 50px;
+}
+.section {
+  width: 70%;
+  margin: 45px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #912229;
+  -webkit-box-shadow: 1px 1px 5px #912229;
+  box-shadow: 1px 1px 5px #912229;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.section .box {
+  padding: 40px;
+}
+.section .box .box-title {
+  font-size: 24px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
